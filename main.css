@@ -3,6 +3,8 @@ body {
     margin: 0px;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.8);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
 #page {
@@ -12,11 +14,11 @@ body {
     height: 98vh;
     margin: auto; /* remove this to push the entire board to the left of the screen */
     margin-top: 5px;
-    background-color: darksalmon;
+    background-color: rgb(233, 150, 122);
     display: flex;
 }
 
-#innerOne {
+#container {
     border: 4px solid black;
     width: 95%;
     height: 95%;
@@ -31,11 +33,19 @@ img {
 
 button {
     font-size: 18px; /* This is to give playpods a uniform size in all browsers because i am using 'ems' */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
     width: 6em;
     height: 6em;
     border-radius: 50%;
     background-color: rgba(39, 13, 13, 0.5);
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(233, 150, 122);
+    transition: 1s;
+    border: 10px outset rgb(53, 50, 10);
 }
 
 .sitPod{
@@ -45,7 +55,6 @@ button {
     height: 6em;
     border-radius: 50%;
     background-color: rgba(39, 13, 13, 0);
-    /* border: 1px solid; */
 }
 
 
@@ -115,4 +124,124 @@ button {
     border: 10px outset rgb(161, 172, 228);
     box-shadow: 10px 10px 10px 1px rgb(25, 25, 26);
     z-index: 10;
+}
+.winner{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: none;
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    width: 50vh;
+    height: fit-content;
+    text-transform: uppercase;
+    background-color: rgba(7, 15, 53, 0.9);
+    color: rgb(255, 0, 0);
+    font-size: 3em;
+    text-align: center;
+    border-radius: 10px;
+    border: 5px solid rgb(131, 4, 4);
+    transform: translateY(-50%) translateX(-50%);
+    transition: 2s;
+    animation: drop 1s ease forwards backwards;
+    z-index: 40;
+}
+
+@keyframes drop{
+    0%{}
+    20%{transform: translateX(-50%)}
+    50%{transform: translateY(-50%)}
+}
+
+input{
+    color: rgb(248, 225, 14);
+    background-color: rgb(255, 0, 0);
+    font-family: inherit;
+    font-size: 0.5em;
+    border-radius: 10px;
+    border: 5px outset rgb(161, 172, 228);
+    margin-top: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.activePlayerClass{
+    color: red;
+    box-shadow: 10px 10px 10px 1px red;
+}
+#resetButton{
+    position: fixed;
+    top: 10%;
+    right: 1%;
+    width: 5em;
+    height: 6em;
+    background-color: brown;
+    /* background-image: url(centreButton.png); */
+    color: rgb(250, 226, 10);
+    box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+    z-index: 30;
+}
+
+#mainMenu{
+    position: fixed;
+    top: 30%;
+    right: 1%;
+    width: 5em;
+    height: 6em;
+    background-color: brown;
+    /* background-image: url(centreButton.png); */
+    color: rgb(250, 226, 10);
+    box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+    z-index: 30;
+}
+
+#newGame{
+    position: fixed;
+    top: 50%;
+    right: 1%;
+    width: 5em;
+    height: 6em;
+    background-color: brown;
+    /* background-image: url(centreButton.png); */
+    color: rgb(250, 226, 10);
+    box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+    z-index: 30;
+}
+
+#twoplayers{
+    position: fixed;
+    top: 10%;
+    left: 1%;
+    width: 5em;
+    height: 6em;
+    background-color: brown;
+    /* background-image: url(centreButton.png); */
+    color: rgb(250, 226, 10);
+    box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+    z-index: 30;
+}
+
+#aiplayer{
+    position: fixed;
+    top: 30%;
+    left: 1%;
+    width: 5em;
+    height: 6em;
+    background-color: brown;
+    /* background-image: url(centreButton.png); */
+    color: rgb(250, 226, 10);
+    box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+    z-index: 30;
+}
+
+#multiplayer{
+    position: fixed;
+    top: 50%;
+    left: 1%;
+    width: 5em;
+    height: 6em;
+    background-color: brown;
+    /* background-image: url(centreButton.png); */
+    color: rgb(250, 226, 10);
+    box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+    z-index: 30;
 }
