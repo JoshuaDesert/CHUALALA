@@ -222,6 +222,7 @@ input{
 
 #aiplayer{
     position: fixed;
+    display: none;
     top: 30%;
     left: 1%;
     width: 5em;
@@ -235,6 +236,7 @@ input{
 
 #multiplayer{
     position: fixed;
+    display: none;
     top: 50%;
     left: 1%;
     width: 5em;
