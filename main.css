@@ -211,8 +211,8 @@ input{
     position: fixed;
     top: 10%;
     left: 1%;
-    width: 5em;
-    height: 6em;
+    width: fit-content;
+    height: fit-content;
     background-color: brown;
     /* background-image: url(centreButton.png); */
     color: rgb(250, 226, 10);
@@ -222,11 +222,11 @@ input{
 
 #aiplayer{
     position: fixed;
-    display: none;
+    /* display: none; */
     top: 30%;
     left: 1%;
-    width: 5em;
-    height: 6em;
+    width: fit-content;
+    height: fit-content;
     background-color: brown;
     /* background-image: url(centreButton.png); */
     color: rgb(250, 226, 10);
@@ -236,14 +236,75 @@ input{
 
 #multiplayer{
     position: fixed;
-    display: none;
+    /* display: none; */
     top: 50%;
     left: 1%;
-    width: 5em;
-    height: 6em;
+    width: fit-content;
+    height: fit-content;
     background-color: brown;
     /* background-image: url(centreButton.png); */
     color: rgb(250, 226, 10);
     box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
     z-index: 30;
+}
+#startScreen{
+    display: none;
+    width: 80vw;
+    height: 90vh;
+    font-size: 2rem;
+    z-index: 100;
+}
+
+@media (orientation: portrait){
+    #page {
+        position: relative; 
+        border: 2px solid black;
+        width: 100vw;
+        height: 50vh;
+        margin-top: 40%;
+        margin-bottom: 50%;
+        background-color: rgb(233, 150, 122);
+        display: flex;
+    }
+
+    #resetButton{
+        position: fixed;
+        top: 82%;
+        left: 10%;
+        width: 5em;
+        height: 6em;
+        background-color: brown;
+        /* background-image: url(centreButton.png); */
+        color: rgb(250, 226, 10);
+        box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+        z-index: 30;
+    }
+    
+    #mainMenu{
+        position: fixed;
+        top: 82%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5em;
+        height: 6em;
+        background-color: brown;
+        /* background-image: url(centreButton.png); */
+        color: rgb(250, 226, 10);
+        box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+        z-index: 30;
+    }
+    
+    #newGame{
+        position: fixed;
+        top: 82%;
+        right: 10%;
+        width: 5em;
+        height: 6em;
+        background-color: brown;
+        /* background-image: url(centreButton.png); */
+        color: rgb(250, 226, 10);
+        box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+        z-index: 30;
+    }
+    
 }
