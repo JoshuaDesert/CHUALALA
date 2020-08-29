@@ -271,8 +271,10 @@ input{
         position: fixed;
         top: 82%;
         left: 10%;
-        width: 5em;
-        height: 6em;
+        width: 10em;
+        height: 2em;
+        border-radius: 2%;
+        font-size: x-large;
         background-color: brown;
         /* background-image: url(centreButton.png); */
         color: rgb(250, 226, 10);
@@ -285,8 +287,10 @@ input{
         top: 82%;
         left: 50%;
         transform: translateX(-50%);
-        width: 5em;
-        height: 6em;
+        width: 10em;
+        height: 2em;
+        border-radius: 2%;
+        font-size: x-large;
         background-color: brown;
         /* background-image: url(centreButton.png); */
         color: rgb(250, 226, 10);
@@ -298,8 +302,10 @@ input{
         position: fixed;
         top: 82%;
         right: 10%;
-        width: 5em;
-        height: 6em;
+        width: 10em;
+        height: 2em;
+        border-radius: 2%;
+        font-size: x-large;
         background-color: brown;
         /* background-image: url(centreButton.png); */
         color: rgb(250, 226, 10);
