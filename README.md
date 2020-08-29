@@ -13,10 +13,11 @@ CHUALALA GAME RULES:
   6.	A Player has to align their PlayPods in one line to Win.
 
 Make A Move by clicking or touching the PlayPod you wish to move and click or touch at any red point to move the PlayPod. If you are the first to align your PlayPods, Either on the;
-  •	Horizontal lines or
-  •	Vertical lines or
-  •	Diagonal lines 
+  1.	Horizontal lines or
+  2.	Vertical lines or
+  3.	Diagonal lines 
 You win the Game.
+
 But players cannot win at their Home Lines;
-  •	Player One (P1) cannot win at the Bottom border line, but can win at the Top border line.
-  •	Player Two (P2) cannot win at the Top border line, but can win at the Bottom border line.
+  1.	Player One (P1) cannot win at the Bottom border line, but can win at the Top border line.
+  2.	Player Two (P2) cannot win at the Top border line, but can win at the Bottom border line.
