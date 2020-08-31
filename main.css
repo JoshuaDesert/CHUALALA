@@ -293,8 +293,8 @@ input {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     color: red;
     font-size: x-large;
     border-radius: 50%;
@@ -378,6 +378,19 @@ input {
         transition: 2s;
         animation: drop 1s ease forwards backwards;
         z-index: 40;
+    }
+
+    .closeButton{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 100px;
+        height: 100px;
+        color: red;
+        font-size: 2em;
+        border-radius: 50%;
+        border: 3px outset red;
+        /* -moz-box-sizing: content-box; */
     }
 
 }
