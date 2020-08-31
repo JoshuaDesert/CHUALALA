@@ -1,58 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=1200">
     <title>GAME OF CHUALALA</title>
     <link rel="icon" type="image/png" href="logo3.png">
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
+
+    <!-- ................ GAME RULES ................ -->
+
+    <section id="gameRules" class="gameMenu">
+        <button type="button" id="close" class="closeButton" onclick="closeButton()"><strong>X</strong></button>
+
+        <h2>CHUALALA GAME RULES:</h2>
+        <ol>
+            <li><strong>A player is to make only one move at a time, then the other player makes a move.</strong></li>
+            <li><strong>A player is to move to only the next open spot.</strong></li>
+            <li><strong>A player cannot jump any open spot or jump to an open spot which is two steps or more away from
+                    the PlayPod a player wishes to move.</strong></li>
+            <li><strong>A player can move to the right or left or diagonally as per open spot.</strong></li>
+            <li><strong>A player is allowed to move forward or back as per open spot.<strong></li>
+            <li><strong>A Player has to align their PlayPods in one line to Win.</strong></li>
+        </ol>
+
+        <p>
+            <strong><em>Make A Move by clicking or touching the PlayPod you wish to move and click or touch at any red
+                    point to move the PlayPod. If you are the first to align your PlayPods, Either on the;</em></strong>
+        </p>
+        <ul>
+            <li><strong><em>Horizontal lines or</em></strong></li>
+            <li><strong><em>Vertical lines or</em></strong></li>
+            <li><strong><em>Diagonal lines</em></strong></li>
+        </ul>
+
+        <p><strong><em>You Win the Game!</em></strong></p>
+
+        <h3>But players cannot win at their Home Lines;</h3>
+        <ul>
+            <li>Player One (P1) cannot win at the Bottom border line, but can win at the Top border line.</li>
+            <li>Player Two (P2) cannot win at the Top border line, but can win at the Bottom border line.</li>
+        </ul>
+        <aside style="color: yellow; font-size: smaller; font-weight:lighter;">HAVE FUN PLAYING!!!!!  (PLEASE NOTE THAT: This Game will not work in IE 11 Below, upgrade IE or use other browsers) <span style="color: yellowgreen;">THE GAME IS STILL IN DEVELOPMENT WITH ONLY A TWO PLAYERS MODE. AIPLAYER AND MULTIPLAYER COMING SOON!</span></aside>
+    </section>
+    
+    <!-- ....... END OF GAME RULES ................ -->
+
+
+
+
     <div id="startScreen" class="winner">
         <h1>Welcome to The Game of CHUALALA</h1>
         <img src="logo3.png" alt="CHUALALA THE GAME LOGO" width="200vw" height="200px">
 
-        <input id='twoplayers' type="button" onclick="" value="TWO PLAYERS MODE"/>
-        <input id='aiplayer' type="button" onclick=""  value="COMPUTER PLAYER MODE" />
+        <input id='twoplayers' type="button" onclick="" value="TWO PLAYERS MODE" />
+        <input id='aiplayer' type="button" onclick="" value="COMPUTER PLAYER MODE" />
         <input id='multiplayer' type="button" onclick="" value="MULTIPLAYER MODE" />
         <input id='mainMenu' type="button" onclick="" value="MAIN MENU" />
         <input id='gameRules' type="button" onclick="" value="GAME RULES" />
-    
-    </div>
-<div id="page">
-    <div id="container">
-            <img src="./images/transparent.png" alt="GAME OF CHUALALA">
-        
-
-        <div id='sitPod-1' class='sitPod top-left'></div>
-        <div id='sitPod-2' class='sitPod top-centre'></div>
-        <div id='sitPod-3' class='sitPod top-right'></div>
-        <div id='sitPod-4' class='sitPod left-centre'></div>
-        <div id='sitPod-5' class='sitPod centre'></div>
-        <div id='sitPod-6' class='sitPod right-centre'></div>
-        <div id='sitPod-7' class='sitPod bottom-left'></div>
-        <div id='sitPod-8' class='sitPod bottom-centre'></div>
-        <div id='sitPod-9' class='sitPod bottom-right'></div>
-
-
-
-        <button type="button"  class ='playpod bottom-left player-1 button'   id='player1-playpod-1'> <h1>P1</h1> </button>
-        <button type="button"  class ='playpod bottom-centre player-1 button' id='player1-playpod-2'> <h1>P1</h1> </button>
-        <button type="button"  class ='playpod bottom-right player-1 button'  id='player1-playpod-3'> <h1>P1</h1> </button>
-        <button type="button"  class ='playpod top-left player-2 button'      id='player2-playpod-1'> <h1>P2</h1> </button>
-        <button type="button"  class ='playpod top-centre player-2 button'    id='player2-playpod-2'> <h1>P2</h1> </button>
-        <button type="button"  class ='playpod top-right player-2 button'     id='player2-playpod-3'> <h1>P2</h1> </button>
 
     </div>
-    <button id='resetButton' type="button" onclick="resetGame()">RESET GAME</button>
-    <button id='mainMenu' type="button" onclick="mainMenu()">MAIN MENU</button>
-    <button id='newGame' type="button" onclick="init()">NEW GAME</button>
-    
-</div>
-<div id='winner' class="winner"></div>
+    <div id="page">
+        <div id="container">
+            <img src="./images/pink.png" alt="GAME OF CHUALALA">
+
+
+            <div id='sitPod-1' class='sitPod top-left'></div>
+            <div id='sitPod-2' class='sitPod top-centre'></div>
+            <div id='sitPod-3' class='sitPod top-right'></div>
+            <div id='sitPod-4' class='sitPod left-centre'></div>
+            <div id='sitPod-5' class='sitPod centre'></div>
+            <div id='sitPod-6' class='sitPod right-centre'></div>
+            <div id='sitPod-7' class='sitPod bottom-left'></div>
+            <div id='sitPod-8' class='sitPod bottom-centre'></div>
+            <div id='sitPod-9' class='sitPod bottom-right'></div>
+
+
+
+            <button type="button" class='playpod bottom-left player-1 button' id='player1-playpod-1'>
+                <h1>P1</h1>
+            </button>
+            <button type="button" class='playpod bottom-centre player-1 button' id='player1-playpod-2'>
+                <h1>P1</h1>
+            </button>
+            <button type="button" class='playpod bottom-right player-1 button' id='player1-playpod-3'>
+                <h1>P1</h1>
+            </button>
+            <button type="button" class='playpod top-left player-2 button' id='player2-playpod-1'>
+                <h1>P2</h1>
+            </button>
+            <button type="button" class='playpod top-centre player-2 button' id='player2-playpod-2'>
+                <h1>P2</h1>
+            </button>
+            <button type="button" class='playpod top-right player-2 button' id='player2-playpod-3'>
+                <h1>P2</h1>
+            </button>
+
+        </div>
+        <button id='resetButton' type="button" onclick="resetGame()">RESET GAME</button>
+        <button id='mainMenu' type="button" onclick="mainMenu()">MAIN MENU</button>
+        <button id='newGame' type="button" onclick="init()">NEW GAME</button>
+
+    </div>
+    <div id='winner' class="winner"></div>
 
     <script src="main.js"></script>
 </body>
+
 </html>

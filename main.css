@@ -4,15 +4,17 @@ body {
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.8);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
     /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
 #page {
-    position: relative; 
+    position: relative;
     border: 2px solid black;
     width: 80vw;
     height: 98vh;
-    margin: auto; /* remove this to push the entire board to the left of the screen */
+    margin: auto;
+    /* remove this to push the entire board to the left of the screen */
     margin-top: 5px;
     background-color: rgb(233, 150, 122);
     display: flex;
@@ -32,7 +34,8 @@ img {
 }
 
 button {
-    font-size: 18px; /* This is to give playpods a uniform size in all browsers because i am using 'ems' */
+    font-size: 18px;
+    /* This is to give playpods a uniform size in all browsers because i am using 'ems' */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
     width: 6em;
@@ -42,14 +45,15 @@ button {
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     background-color: rgb(233, 150, 122);
     transition: 1s;
     border: 10px outset rgb(53, 50, 10);
 }
 
-.sitPod{
-    font-size: 18px; /* This is to give all the sitpods a uniform size in all browsers because i am using 'ems' */
+.sitPod {
+    font-size: 18px;
+    /* This is to give all the sitpods a uniform size in all browsers because i am using 'ems' */
     position: absolute;
     width: 6em;
     height: 6em;
@@ -108,7 +112,7 @@ button:hover{
     right: 0%;
 }
 
-.player-1{
+.player-1 {
     background-color: rgb(127, 9, 96);
     color: rgb(248, 225, 14);
     font-weight: bolder;
@@ -117,7 +121,7 @@ button:hover{
     z-index: 10;
 }
 
-.player-2{
+.player-2 {
     background-color: rgb(206, 172, 167);
     color: black;
     font-weight: bolder;
@@ -125,7 +129,8 @@ button:hover{
     box-shadow: 10px 10px 10px 1px rgb(25, 25, 26);
     z-index: 10;
 }
-.winner{
+
+.winner {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: none;
     position: fixed;
@@ -146,13 +151,19 @@ button:hover{
     z-index: 40;
 }
 
-@keyframes drop{
-    0%{}
-    20%{transform: translateX(-50%)}
-    50%{transform: translateY(-50%)}
+@keyframes drop {
+    0% {}
+
+    20% {
+        transform: translateX(-50%)
+    }
+
+    50% {
+        transform: translateY(-50%)
+    }
 }
 
-input{
+input {
     color: rgb(248, 225, 14);
     background-color: rgb(255, 0, 0);
     font-family: inherit;
@@ -164,11 +175,12 @@ input{
     cursor: pointer;
 }
 
-.activePlayerClass{
+.activePlayerClass {
     color: red;
     box-shadow: 10px 10px 10px 1px red;
 }
-#resetButton{
+
+#resetButton {
     position: fixed;
     top: 10%;
     right: 1%;
@@ -181,7 +193,7 @@ input{
     z-index: 30;
 }
 
-#mainMenu{
+#mainMenu {
     position: fixed;
     top: 30%;
     right: 1%;
@@ -194,7 +206,7 @@ input{
     z-index: 30;
 }
 
-#newGame{
+#newGame {
     position: fixed;
     top: 50%;
     right: 1%;
@@ -207,7 +219,7 @@ input{
     z-index: 30;
 }
 
-#twoplayers{
+#twoplayers {
     position: fixed;
     top: 10%;
     left: 1%;
@@ -220,7 +232,7 @@ input{
     z-index: 30;
 }
 
-#aiplayer{
+#aiplayer {
     position: fixed;
     /* display: none; */
     top: 30%;
@@ -234,7 +246,7 @@ input{
     z-index: 30;
 }
 
-#multiplayer{
+#multiplayer {
     position: fixed;
     /* display: none; */
     top: 50%;
@@ -247,7 +259,8 @@ input{
     box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
     z-index: 30;
 }
-#startScreen{
+
+#startScreen {
     display: none;
     width: 80vw;
     height: 90vh;
@@ -255,23 +268,57 @@ input{
     z-index: 100;
 }
 
-@media (orientation: portrait){
+/* ..............  SECTION GAME RULES ............... */
+
+.gameMenu {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* display: none; */
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    padding: 4px 20px;
+    height: fit-content;
+    background-color: rgba(7, 15, 53, 0.9);
+    color: rgb(255, 0, 0);
+    font-size: 1.16em;
+    border-radius: 10px;
+    border: 5px solid rgb(131, 4, 4);
+    transition: 2s;
+    animation: drop 1s ease forwards backwards;
+    z-index: 40;
+}
+.closeButton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    color: red;
+    font-size: x-large;
+    border-radius: 50%;
+    border: 3px outset red;
+    /* -moz-box-sizing: content-box; */
+}
+
+@media (orientation: portrait) {
     #page {
-        position: relative; 
+        position: relative;
         border: 2px solid black;
         width: 100vw;
         height: 50vh;
-        margin-top: 40%;
+        margin-top: 30%;
         margin-bottom: 50%;
         background-color: rgb(233, 150, 122);
         display: flex;
     }
 
-    #resetButton{
+    #resetButton {
         position: fixed;
         top: 82%;
         left: 10%;
-        width: 10em;
+        width: 8em;
         height: 2em;
         border-radius: 2%;
         font-size: x-large;
@@ -281,13 +328,13 @@ input{
         box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
         z-index: 30;
     }
-    
-    #mainMenu{
+
+    #mainMenu {
         position: fixed;
         top: 82%;
         left: 50%;
         transform: translateX(-50%);
-        width: 10em;
+        width: 8em;
         height: 2em;
         border-radius: 2%;
         font-size: x-large;
@@ -297,12 +344,12 @@ input{
         box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
         z-index: 30;
     }
-    
-    #newGame{
+
+    #newGame {
         position: fixed;
         top: 82%;
         right: 10%;
-        width: 10em;
+        width: 8em;
         height: 2em;
         border-radius: 2%;
         font-size: x-large;
@@ -312,5 +359,26 @@ input{
         box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
         z-index: 30;
     }
-    
+
+    .gameMenu {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        /* display: none; */
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90vw;
+        padding: 0px 20px;
+        height: fit-content;
+        background-color: rgba(7, 15, 53, 0.9);
+        color: rgb(255, 0, 0);
+        font-size: 2.5em;
+        border-radius: 10px;
+        border: 5px solid rgb(131, 4, 4);
+        transition: 2s;
+        animation: drop 1s ease forwards backwards;
+        z-index: 40;
+    }
+
 }
+
