@@ -17,7 +17,7 @@
     <!-- ................ GAME RULES ................ -->
 
     <section id="gameRules" class="gameMenu">
-        <button type="button" id="close" class="closeButton" onclick="closeButton()"><strong>X</strong></button>
+        <button type="button" id="close" class="closeButton" onclick="mainMenu()"><strong>X</strong></button>
 
         <h2>CHUALALA GAME RULES:</h2>
         <ol>
@@ -31,39 +31,43 @@
         </ol>
 
         <p>
-            <strong><em>Make A Move by clicking or touching the PlayPod you wish to move and click or touch at any red
-                    point to move the PlayPod. If you are the first to align your PlayPods, Either on the;</em></strong>
+            <strong>Make A Move by clicking or touching the PlayPod you wish to move and click or touch at any red
+                    point to move the PlayPod. If you are the first to align your PlayPods, Either on the;</strong>
         </p>
         <ul>
-            <li><strong><em>Horizontal lines or</em></strong></li>
-            <li><strong><em>Vertical lines or</em></strong></li>
-            <li><strong><em>Diagonal lines</em></strong></li>
+            <li><strong>Horizontal lines or</strong></li>
+            <li><strong>Vertical lines or</strong></li>
+            <li><strong>Diagonal lines</strong></li>
         </ul>
 
         <p><strong><em>You Win the Game!</em></strong></p>
 
-        <h3>But players cannot win at their Home Lines;</h3>
+        <h3>But players cannot win on their Home Lines;</h3>
         <ul>
             <li>Player One (P1) cannot win at the Bottom border line, but can win at the Top border line.</li>
             <li>Player Two (P2) cannot win at the Top border line, but can win at the Bottom border line.</li>
         </ul>
-        <aside style="color: yellow; font-size: smaller; font-weight:lighter;">HAVE FUN PLAYING!!!!!  (PLEASE NOTE THAT: This Game will not work in IE 11 Below, upgrade IE or use other browsers) <span style="color: yellowgreen;">THE GAME IS STILL IN DEVELOPMENT WITH ONLY A TWO PLAYERS MODE. AIPLAYER AND MULTIPLAYER COMING SOON!</span></aside>
+        <aside style="color: yellow; font-size: smaller; font-weight:lighter; text-align:center;">(PLEASE NOTE THAT: This Game will not work in IE 11 Below, upgrade IE or use other browsers) 
+            <span style="color: yellowgreen;">THE GAME IS STILL IN DEVELOPMENT WITH ONLY A TWO PLAYERS MODE. HAVE FUN PLAYING!!!!! </span>
+        </aside>
     </section>
     
-    <!-- ....... END OF GAME RULES ................ -->
-
-
+    <!-- ....... END OF GAME RULES SECTION ................ -->
 
 
     <div id="startScreen" class="winner">
-        <h1>Welcome to The Game of CHUALALA</h1>
-        <img src="logo3.png" alt="CHUALALA THE GAME LOGO" width="200vw" height="200px">
+        <h1>***CHUALALA MENU***</h1>
+        <div id="startScreenLogoContainer">
 
-        <input id='twoplayers' type="button" onclick="" value="TWO PLAYERS MODE" />
-        <input id='aiplayer' type="button" onclick="" value="COMPUTER PLAYER MODE" />
-        <input id='multiplayer' type="button" onclick="" value="MULTIPLAYER MODE" />
-        <input id='mainMenu' type="button" onclick="" value="MAIN MENU" />
-        <input id='gameRules' type="button" onclick="" value="GAME RULES" />
+            <img src="./images/logo3.png" id="startScreenLogo" alt="CHUALALA THE GAME LOGO">
+        </div>
+
+        <input id='twoplayers' type="button" onclick="" value="TWO PLAYERS" />
+        <input id='aiplayer' type="button" onclick="" value="AI PLAYER" />
+        <input id='multiplayer' type="button" onclick="" value="MULTIPLAYER" />
+        <input id='gameRules' class="gameRulesButton" type="button" onclick="gameRules()" value="GAME RULES" />
+        <input id='themes' class="gameRulesButton" type="button" onclick="" value="THEMES" />
+        <input id='playbutton' type="button" onclick="playbutton()" value="PLAY" />
 
     </div>
     <div id="page">
@@ -109,6 +113,16 @@
 
     </div>
     <div id='winner' class="winner"></div>
+    <div id='playerMode' class="winner"></div>
+    <div id="start">
+        <h1 id="startHeadText">Welcome to The Game of CHUALALA</h1>
+        <div id="startScreenLogoContainer">
+
+            <img src="./images/logo3.png" id="startScreenLogo" alt="CHUALALA THE GAME LOGO">
+
+        </div>
+        <input id='startButton' type="button" onclick="start()" value="START" />
+    </div>
 
     <script src="main.js"></script>
 </body>

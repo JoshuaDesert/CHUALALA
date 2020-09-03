@@ -33,9 +33,9 @@
 
   function winnerDisplay() {
 
-    winnerHtmlElement.innerHTML = `*CHUALALA* <br /> ${activePlayer} WINS!!!! <br />
+    winnerHtmlElement.innerHTML = `*CHUALALA* <br /> ${activePlayer} <br /> WINS!!!! <br />
                                 <input type ="button" value = "START A NEW GAME" onclick="init()" /> <br />
-                                <input id = 'reset' type ="button" value = "MAIN MENU" onclick="" /> <br />`
+                                <input id = 'reset' type ="button" value = "MAIN MENU" onclick="mainMenu()" /> <br />`
 
     winnerHtmlElement.style.display = 'block';
   }
@@ -359,27 +359,6 @@
 
   }
 
-  // //............................END of Winning Variables ....................................
-
-  // //............................ Checking wrong move Section....................................
-
-  //       //If this functions returns True; then it is a wrong Move, but if it returns False; then it is not a wrong move
-  //        const triangleOne = returnArray([0,1,2,4]);
-  //        const triangleTwo = returnArray([2,5,8,4]);
-  //        const triangleThree = returnArray([6,7,8,4]);
-  //        const triangleFour = returnArray([0,3,6,4]);
-
-  //        const squareArrayOne = returnArray([0,1,3,4]);
-  //        const squareArrayTwo = returnArray([1,2,4,5]);
-  //        const squareArrayThree = returnArray([4,5,7,8]);
-  //        const squareArrayFour = returnArray([3,4,6,7]);
-
-  //        const centerPiece = returnArray([0,1,2,3,4,5,6,7,8]);
-
-
-  // //............................End of Checking wrong move Section....................................
-
-
 
   function resetGame() {
 
@@ -425,9 +404,81 @@
 
   }
 
-  function closeButton() {
-      document.getElementById('gameRules').style.display = 'none';
+  //........................... UI SECTION .........................................
+
+  function mainMenu() {
+    //close the game rules section
+    document.getElementById('gameRules').style.display = 'none';
+    //get back to the start screen
+    document.getElementById('startScreen').style.display = 'block';
+
+    const getPlayerMode = document.getElementById('playerMode');
+
+    winnerHtmlElement.style.display = 'none';
+    getPlayerMode.style.display = 'none'; //this is to be checked
+
+    chualalaPlaying = false;
   }
 
+  function start(){
+    document.getElementById('start').style.display = 'none';
+    mainMenu();
+  }
+
+  function gameRules() {
+    //display the game rules
+    document.getElementById('gameRules').style.display = 'block';
+    //close the start screen
+    document.getElementById('startScreen').style.display = 'none';
+  }
+
+  function playbutton() {
+    document.getElementById('startScreen').style.display = 'none';
+    init();
+  }
+
+  function playerMode() {
+    //grab which ever player mode selected or clicked on
+    const twoplayers = document.getElementById('twoplayers');
+    const aiplayer = document.getElementById('aiplayer');
+    const multiplayer = document.getElementById('multiplayer');
+    const themes = document.getElementById('themes');
+
+    //grab the section in the Dom to insert the html for a selected player mode
+    const getPlayerMode = document.getElementById('playerMode');
+
+    const myArrayOfPlayersMode = [twoplayers, aiplayer, multiplayer, themes];
+
+    myArrayOfPlayersMode.forEach((item) => {
+      item.addEventListener('click', event => {
+        const mode = event.target.value;
+
+        //if its thems button
+        if((mode === 'THEMES')){
+          getPlayerMode.innerHTML = `<button type="button" id="close" class="closeButton" onclick="mainMenu()"><strong>X</strong></button>
+          <br /> ${event.target.value}<br /> coming soon!!`
+          document.getElementById('startScreen').style.display = 'none';
+          getPlayerMode.style.display = 'block';
+
+        }else if (!(mode === 'TWO PLAYERS')) {
+          //any button other than two-Player mode
+          getPlayerMode.innerHTML = `<button type="button" id="close" class="closeButton" onclick="mainMenu()"><strong>X</strong></button>
+          <br /> ${event.target.value}<br /> mode <br /> coming soon!!`
+          document.getElementById('startScreen').style.display = 'none';
+          getPlayerMode.style.display = 'block';
+
+        } else {
+          //Two_player mode
+          document.getElementById('startScreen').style.display = 'none';
+          getPlayerMode.style.display = 'none';
+          init();
+        }
+
+
+      })
+    })
+
+  }
+  playerMode();
 
 }

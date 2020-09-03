@@ -132,11 +132,11 @@ button:hover {
 
 .winner {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: none;
     position: fixed;
+    display: none;
     top: 50vh;
     left: 50vw;
-    width: 50vh;
+    width: fit-content;
     height: fit-content;
     text-transform: uppercase;
     background-color: rgba(7, 15, 53, 0.9);
@@ -185,10 +185,12 @@ input {
     top: 10%;
     right: 1%;
     width: 5em;
-    height: 6em;
+    height: 5em;
     background-color: brown;
-    /* background-image: url(centreButton.png); */
-    color: rgb(250, 226, 10);
+    background-image: url(./images/centreButton.png);
+    background-position: center;
+    background-size: cover;
+    color: rgb(228, 228, 241);
     box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
     z-index: 30;
 }
@@ -198,10 +200,12 @@ input {
     top: 30%;
     right: 1%;
     width: 5em;
-    height: 6em;
+    height: 5em;
     background-color: brown;
-    /* background-image: url(centreButton.png); */
-    color: rgb(250, 226, 10);
+    background-image: url(./images/centreButton.png);
+    background-position: center;
+    background-size: cover;
+    color: rgb(228, 228, 241);
     box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
     z-index: 30;
 }
@@ -211,52 +215,53 @@ input {
     top: 50%;
     right: 1%;
     width: 5em;
-    height: 6em;
+    height: 5em;
     background-color: brown;
-    /* background-image: url(centreButton.png); */
-    color: rgb(250, 226, 10);
+    background-image: url(./images/centreButton.png);
+    background-position: center;
+    background-size: cover;
+    color: rgb(228, 228, 241);
     box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
     z-index: 30;
 }
 
 #twoplayers {
     position: fixed;
-    top: 10%;
-    left: 1%;
+    top: 50%;
+    right: 5%;
     width: fit-content;
-    height: fit-content;
+    height: 45px;
     background-color: brown;
-    /* background-image: url(centreButton.png); */
     color: rgb(250, 226, 10);
     box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+    font-size: x-large;
     z-index: 30;
 }
 
 #aiplayer {
     position: fixed;
-    /* display: none; */
-    top: 30%;
-    left: 1%;
+    top: 65%;
+    right: 5%;
     width: fit-content;
-    height: fit-content;
+    height: 45px;
     background-color: brown;
-    /* background-image: url(centreButton.png); */
     color: rgb(250, 226, 10);
     box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+    font-size: x-large;
     z-index: 30;
+
 }
 
 #multiplayer {
     position: fixed;
-    /* display: none; */
-    top: 50%;
-    left: 1%;
+    top: 80%;
+    right: 5%;
     width: fit-content;
-    height: fit-content;
+    height: 45px;
     background-color: brown;
-    /* background-image: url(centreButton.png); */
     color: rgb(250, 226, 10);
     box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+    font-size: x-large;
     z-index: 30;
 }
 
@@ -268,11 +273,66 @@ input {
     z-index: 100;
 }
 
+#startScreenLogoContainer{
+    position: absolute;
+    width: 300px; 
+    height: 300px;
+    top: 23%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+#startScreenLogo{
+    border-radius: 50%;
+    border: 1px solid  khaki;
+    animation: rotateLogo 20s linear infinite forwards;
+}
+
+/* The Entry Point into the Game */
+
+#start{
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    color: rgb(221, 19, 5);
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(7, 15, 53, 0.9);
+    z-index: 300;
+}
+
+#startHeadText{
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    width: 100%;
+    font-size: 3em;
+    transform: translateX(-50%);
+}
+
+#startButton{
+    position: absolute;
+    top: 80%;
+    font-size: 3em;
+    transform: translateX(-50%);
+}
+
+/* End of Entry Point */
+
+@keyframes rotateLogo{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
 /* ..............  SECTION GAME RULES ............... */
 
 .gameMenu {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 5px;
     left: 50%;
@@ -281,15 +341,16 @@ input {
     padding: 4px 20px;
     height: fit-content;
     background-color: rgba(7, 15, 53, 0.9);
-    color: rgb(255, 0, 0);
+    color: white;
     font-size: 1.16em;
     border-radius: 10px;
     border: 5px solid rgb(131, 4, 4);
     transition: 2s;
     animation: drop 1s ease forwards backwards;
-    z-index: 40;
+    z-index: 50;
 }
-.closeButton{
+
+.closeButton {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -300,6 +361,26 @@ input {
     border-radius: 50%;
     border: 3px outset red;
     /* -moz-box-sizing: content-box; */
+}
+
+#playbutton {
+    position: fixed;
+    top: 80%;
+    left: 5%;
+    height: 45px;
+    font-size: x-large;
+}
+
+.gameRulesButton{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    font-size: x-large;
+    height: 45px;
+}
+
+#themes{
+    top: 65%;
 }
 
 @media (orientation: portrait) {
@@ -323,7 +404,6 @@ input {
         border-radius: 2%;
         font-size: x-large;
         background-color: brown;
-        /* background-image: url(centreButton.png); */
         color: rgb(250, 226, 10);
         box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
         z-index: 30;
@@ -339,10 +419,90 @@ input {
         border-radius: 2%;
         font-size: x-large;
         background-color: brown;
-        /* background-image: url(centreButton.png); */
         color: rgb(250, 226, 10);
         box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
         z-index: 30;
+    }
+
+    #twoplayers {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        margin: 10px;
+        background-color: brown;
+        background-image: url(./images/centreButton.png);
+        background-position: center;
+        background-size: cover;
+        color: rgb(241, 238, 10);
+        box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+        font-size: x-large;
+        z-index: 30;
+    }
+
+    #aiplayer {
+        position: fixed;
+        top: 60%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        transform: translateX(-50%);
+        margin: 10px;
+        border-radius: 50%;
+        background-color: brown;
+        background-image: url(./images/centreButton.png);
+        background-position: center;
+        background-size: cover;
+        color: rgb(241, 238, 10);
+        box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+        font-size: x-large;
+        z-index: 30;
+
+    }
+
+    #multiplayer {
+        position: fixed;
+        /* display: none; */
+        top: 80%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        transform: translateX(-50%);
+        margin: 10px;
+        border-radius: 50%;
+        background-color: brown;
+        background-image: url(./images/centreButton.png);
+        background-position: center;
+        background-size: cover;
+        color: rgb(241, 238, 10);
+        box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
+        font-size: x-large;
+        z-index: 30;
+    }
+
+    #playbutton {
+        position: fixed;
+        top: 21%;
+        left: 50%;
+        height: 50px;
+        transform: translateX(-50%);
+        font-size: x-large;
+    }
+
+    .gameRulesButton{
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        height: 50px;
+        transform: translateX(-50%);
+        font-size: x-large;
+    }
+
+    #themes{
+        top: 13%;
     }
 
     #newGame {
@@ -354,7 +514,6 @@ input {
         border-radius: 2%;
         font-size: x-large;
         background-color: brown;
-        /* background-image: url(centreButton.png); */
         color: rgb(250, 226, 10);
         box-shadow: 5px 1px 1px 1px rgb(0, 0, 0);
         z-index: 30;
@@ -362,7 +521,6 @@ input {
 
     .gameMenu {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        /* display: none; */
         position: absolute;
         top: -20%;
         left: 50%;
@@ -380,7 +538,7 @@ input {
         z-index: 40;
     }
 
-    .closeButton{
+    .closeButton {
         position: absolute;
         top: 10px;
         right: 10px;
@@ -393,5 +551,57 @@ input {
         /* -moz-box-sizing: content-box; */
     }
 
-}
+    .winner {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        position: fixed;
+        top: 50vh;
+        left: 50vw;
+        width: 50vh;
+        height: fit-content;
+        text-transform: uppercase;
+        background-color: rgba(7, 15, 53, 0.9);
+        color: rgb(255, 0, 0);
+        font-size: 3em;
+        text-align: center;
+        border-radius: 10px;
+        border: 5px solid rgb(131, 4, 4);
+        transform: translateY(-50%) translateX(-50%);
+        transition: 2s;
+        animation: drop 1s ease forwards backwards;
+        z-index: 40;
+    }
 
+    #startScreenLogoContainer{
+        position: absolute;
+        width: 600px; 
+        height: 600px;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+    
+    }
+
+    #start{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #startHeadText{
+        width: auto;
+        font-size: 4em;
+    }
+
+    #startButton{
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+
+
+}
